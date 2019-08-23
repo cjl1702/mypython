@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='style.css')}}">
+{% if dict['name'] %}
+<h1>我是{{ dict['name'] }};密码是{{ dict['password']}}</h1>
+{% else %}
+<div>
+    <form method="POST" action="/login">
+ 姓名:<input type="text" name="username" value="" /> <br/>
+    密码:<input type="password" name="password" value=""/><br/>
+    <input type="submit" value="提交">
+    </form>
+
+</div>
+{% endif %}
